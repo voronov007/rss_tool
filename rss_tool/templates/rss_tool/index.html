@@ -1,0 +1,25 @@
+{% extends "rss_tool/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{ h1 }}</h1>
+{% if errors %}
+    {% for error in errors %}
+        <div class="alert alert-danger" role="alert">
+          {{ error }}
+        </div>
+    {% endfor %}
+{% endif %}
+{% if success %}
+    <div class="alert alert-success" role="alert">
+      {{ success }}
+    </div>
+{% endif %}
+
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+{% endblock %}

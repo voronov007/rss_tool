@@ -1,0 +1,40 @@
+version: '2'
+
+services:
+  sendcloud_db_service:
+    image: postgres:9.6
+    env_file: ./.env
+    ports:
+      - "$DATABASE_PORT:$DATABASE_PORT"
+    container_name: sendcloud_db_service_c
+
+
+  redis:
+    image: redis
+    container_name: sendcloud_redis_c
+
+
+  sendcloud_web:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "$WEB_PORT:$WEB_PORT"
+    command: python manage.py runserver 0.0.0.0:$WEB_PORT
+    depends_on:
+      - sendcloud_db_service
+    env_file: ./.env
+    container_name: sendcloud_web_c
+
+
+  celery:
+    build: .
+    working_dir: /code
+    volumes:
+      - .:/code
+    env_file: ./.env
+    depends_on:
+      - redis
+    container_name: sendcloud_celery_c
+    command: celery worker -A sendcloud --loglevel=debug
+
