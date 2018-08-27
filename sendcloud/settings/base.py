@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # custom apps
     'api',
+    'authentication',
     'rss_tool',
 ]
 
@@ -54,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'authentication.middleware.AuthMiddleware',
 ]
 
 ROOT_URLCONF = 'sendcloud.urls'
@@ -109,6 +112,14 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+AUTHENTICATION_BACKENDS = (
+    'authentication.backend.EmailAuthenticationBackend',
+)
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 
 # Internationalization
