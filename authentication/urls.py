@@ -1,9 +1,8 @@
-from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import re_path
 
-from .views import UserFormView, UserRegisterView
+from .views import UserLoginView, UserRegisterView
 
 urlpatterns = [
-    re_path('login/?', UserFormView.as_view(), name='login'),
+    re_path('login/?', UserLoginView.as_view(), name='login'),
     re_path('register/?', UserRegisterView.as_view(), name='register'),
 ]

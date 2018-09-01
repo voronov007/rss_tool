@@ -2,11 +2,18 @@
 {% load static %}
 
 {% block content %}
-<h1>RSS Tool Login</h1>
+<h1>RSS Tool. Login</h1>
+<div class="alert alert-secondary" role="alert">
+    Not registered? <a href="{% url 'register' %}" class="badge badge-info">Registration</a>
+</div>
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+      {{ error }}
+    </div>
+{% endif %}
 <form method="POST" class="post-form">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Login</button>
 </form>
-<div>Not registered? <a href="{% url 'register' %}">Registration</a></div>
 
 {% endblock %}
