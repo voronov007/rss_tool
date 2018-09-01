@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>RSS Tool Register</h1>
+<form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+<div>Already registered? <a href="{% url 'login' %}">Login</a></div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "rss_tool/base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block content %}
@@ -7,5 +7,6 @@
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Login</button>
 </form>
+<div>Not registered? <a href="{% url 'register' %}">Registration</a></div>
 
 {% endblock %}
