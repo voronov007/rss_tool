@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{ h1 }}</h1>
+{% for u in users %}
+    <p>
+        <button type="button" class="btn btn-light">{{ u.email }} <span class="badge badge-pill badge-secondary">{{ u.feeds }}</span> </button>
+    </p>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if pagination.has_previous %}
+            <a href="?page=1">1</a>
+            <a href="?page={{ pagination.previous_page_number }}"><</a>
+        {% endif %}
+
+        {% if pagination.num_pages > 1 %}
+        <span class="current">
+            Page {{ pagination.number }} of {{ pagination.num_pages }}
+        </span>
+        {% elif not users %}
+        <span class="current">
+            There is no users feeds data
+        </span>
+        {% endif %}
+
+
+
+        {% if pagination.has_next %}
+            <a href="?page={{ pagination.next_page_number }}">></a>
+            <a href="?page={{ pagination.num_pages }}">{{ pagination.num_pages }}</a>
+        {% endif %}
+    </span>
+</div>
+
+{% endblock %}

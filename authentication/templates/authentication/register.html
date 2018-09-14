@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block content %}
-<h1>RSS Tool. Registration</h1>
 <div class="alert alert-secondary" role="alert">
-    Already registered? <a href="{% url 'login' %}" class="badge badge-info">Login</a>
+    Already registered? <a href="{% url 'login' %}" class="badge badge-success">Login</a>
 </div>
+<h1>RSS Tool. Registration</h1>
 <form method="POST" class="post-form">{% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Register</button>
+    <button type="submit" class="btn btn-info">Register</button>
 </form>
 
 {% endblock %}

@@ -1,32 +1,19 @@
 from django.shortcuts import render
 from django.views import View
 
-from .forms import RSSForm
+from rss_tool.forms import RSSForm
+from rss_tool.utils.validators import validate_url
+from rss_tool.utils.parser import rss_xml_parser_algemeen, parser_exist
 
 
 # from .models import RSS
+__all__ = [
+    'UrlParserView'
+]
 
-
-def url_parser(request):
-    data = {
-        'section': {'title': "RSS Tool"},
-        'h1': "RSS Parser",
-        'form': RSSForm()
-    }
-    errors = []
-    if request.method == "POST":
-        form = RSSForm(request.POST)
-        if form.is_valid():
-            # errors = person_data_validation(form.data)
-            if not errors:
-                data["success"] = "RSS parsing started. Please, be patient"
-        else:
-            data["form"] = form
-
-    if errors:
-        data["errors"] = errors
-
-    return render(request, 'rss_tool/index.html', data)
+parsers = {
+    "nu.nl/rss/Algemeen": rss_xml_parser_algemeen
+}
 
 
 class UrlParserView(View):
@@ -43,15 +30,29 @@ class UrlParserView(View):
 
     def post(self, request, *args, **kwargs):
         errors = []
+        if "errors" in self.data:
+            del self.data["errors"]
+
+        # process form
         form = self.form_class(request.POST)
         if form.is_valid():
-            # errors = person_data_validation(form.data)
+            url = validate_url(form.cleaned_data["rss_url"])
+            if not url:
+                errors.append("Incorrect RSS url address. Please fix it")
+
+            if not parser_exist(parsers, url):
+                 errors.append("There is no parser for the listed url")
+
             if not errors:
                 self.data["success"] = "RSS parsing started. Please, be patient"
+                # show an empty form
+                self.data["form"] = self.form_class()
+                rss_xml_parser_algemeen(url)
                 return render(request, self.template_name, self.data)
             else:
                 self.data["errors"] = errors
 
+        # show form with previously entered data
         self.data["form"] = form
 
         return render(request, self.template_name, self.data)

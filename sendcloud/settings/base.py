@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3-rd party apps
+    'rest_framework',
     # 'graphene_django',  # GraphQL
 
     # custom apps

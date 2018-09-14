@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.shortcuts import render, reverse
 from django.views import View
+from django.contrib import messages
 from django.http import HttpResponseRedirect
 
 from sendcloud.settings import LOGIN_REDIRECT_URL
@@ -65,5 +66,9 @@ class UserRegisterView(View):
         user = authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
+            messages.success(
+                request,
+                'You have been successfully registered!'
+            )
             return HttpResponseRedirect(LOGIN_REDIRECT_URL)
 
