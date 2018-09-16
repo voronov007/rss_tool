@@ -16,7 +16,7 @@ def parser_exist(parsers: dict, url: str) -> bool:
 def rss_xml_parser_algemeen(url: str, user_id):
     datetime_pattern = "%a, %d %b %Y %X %z"
     r = requests.get(url)
-    print(r.text)
+    # print(r.text)
 
     # entire feed
     root = etree.fromstring(r.text)
@@ -58,5 +58,4 @@ def rss_xml_parser_algemeen(url: str, user_id):
             )
         )
         # feeds.append([title, desc, pub_date])
-    # Feed.objects.bulk_create(feeds)
-    print(feeds)
+    Feed.objects.bulk_create(feeds)

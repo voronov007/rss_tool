@@ -47,7 +47,7 @@ class UrlParserView(View):
                 self.data["success"] = "RSS parsing started. Please, be patient"
                 # show an empty form
                 self.data["form"] = self.form_class()
-                rss_xml_parser_algemeen(url)
+                rss_xml_parser_algemeen(url, request.user.id)
                 return render(request, self.template_name, self.data)
             else:
                 self.data["errors"] = errors

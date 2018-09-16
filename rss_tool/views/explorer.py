@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+from django.db.models import Count, Q
 from django.shortcuts import render
 from django.views import View
 
@@ -11,7 +12,14 @@ class ExploreView(View):
     template_name = 'rss_tool/explore.html'
 
     def get(self, request, *args, **kwargs):
-        users = User.objects.all()
+        # get users with at least 1 feed
+        users = User.objects.annotate(
+            feeds_count=Count('channels__feeds')
+        ).filter(
+            Q(feeds_count__gte=1), ~Q(id=request.user.pk)
+        ).all()
+
+        # use pagination
         paginator = Paginator(users, 25)
         page = request.GET.get('page')
         users_per_page = paginator.get_page(page)
@@ -36,5 +44,8 @@ class ExploreView(View):
             explore_data["pagination"]["next_page_number"] = users_per_page.next_page_number()
 
         for u in users_per_page:
-            explore_data["users"].append({"email": u.email, "feeds": 1})
+            explore_data["users"].append(
+                {"email": u.email, "feeds": u.feeds_count, "id": u.pk}
+            )
+
         return render(request, self.template_name, explore_data)

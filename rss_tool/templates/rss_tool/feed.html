@@ -3,13 +3,25 @@
 
 {% block content %}
 
-<h1>{{ h1 }}</h1>
-{% for u in users %}
-<p>
-    <a href="{% url 'rss:feeds' u.id %}">
-        <button type="button" class="btn btn-light">{{ u.email }} <span class="badge badge-pill badge-secondary">{{ u.feeds }}</span> </button>
-    </a>
-</p>
+<h1>{{ h1 }} </h1>
+
+{% for f in feeds %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ f.title }}</h5>
+    <p class="card-text">{{ f.description }}</p>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_{{f.id}}" aria-expanded="false" aria-controls="collapseExample">
+        Comments <span class="badge badge-pill badge-secondary">{{ f.comments.count }}</span>
+    </button>
+    <div class="collapse" id="collapse_{{f.id}}">
+        {% for c in f.comments.all %}
+        <div class="card card-body">
+            {{ c.text }}
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
 {% endfor %}
 
 <div class="pagination">
@@ -23,9 +35,9 @@
         <span class="current">
             Page {{ pagination.number }} of {{ pagination.num_pages }}
         </span>
-        {% elif not users %}
+        {% elif not feeds %}
         <span class="current">
-            There is no users feeds data
+            There is no feeds data for the user: {{ email }}
         </span>
         {% endif %}
 
@@ -37,5 +49,4 @@
         {% endif %}
     </span>
 </div>
-
 {% endblock %}
