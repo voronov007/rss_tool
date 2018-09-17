@@ -69,3 +69,15 @@ class Comment(models.Model):
         if not self.id:
             self.pub_date = dt.now()
         return super().save(*args, **kwargs)
+
+
+class Bookmark(models.Model):
+    feed = models.ForeignKey(
+        Feed, on_delete=models.CASCADE, related_name="bookmarks"
+    )
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="bookmarks"
+    )
+
+    class Meta:
+        unique_together = ("feed", "user")

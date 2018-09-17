@@ -8,7 +8,15 @@
 {% for f in feeds %}
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">{{ f.title }}</h5>
+    <h5 class="card-title">{{ f.title }}
+        <a href="#" name="{{f.id}}" class="bookmark">
+        {% if f.is_favorite %}
+        Favorite
+        {% else %}
+        Add to favorites
+        {% endif %}
+        </a>
+    </h5>
     <p class="card-text">{{ f.description }}</p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_{{f.id}}" aria-expanded="false" aria-controls="collapseExample">
         Comments <span class="badge badge-pill badge-secondary">{{ f.comments.count }}</span>
@@ -16,9 +24,17 @@
     <div class="collapse" id="collapse_{{f.id}}">
         {% for c in f.comments.all %}
         <div class="card card-body">
+            {{ c.author.email }}<br>
             {{ c.text }}
         </div>
         {% endfor %}
+        <form method="POST" id="form_{{f.id}}">
+            <div class="form-group">
+                <input type="text" name="comment" class="form-control" /><br>
+                <input id="{{f.id}}" class="btn btn-success add_comment" value="Add comment">
+            </div>
+        </form>
+
     </div>
   </div>
 </div>
@@ -49,4 +65,8 @@
         {% endif %}
     </span>
 </div>
+{% endblock %}
+
+{% block additional_scripts %}
+<script src="{% static 'rss_tool/js/rss.js' %}"></script>
 {% endblock %}
