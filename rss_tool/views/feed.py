@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.views import View
 
 from rss_tool.forms import CommentForm
-from rss_tool.models import Feed, Bookmark
+from rss_tool.models import Feed, Bookmark, Comment
 
 __all__ = ['FeedsView']
 
@@ -18,25 +18,34 @@ class FeedsView(View):
 
     def post(self, request, user_id):
         data = request.POST
+        current_user = request.user
 
         # check if bookmark
         is_bookmark = data.get("bookmark")
         feed_id = int(data.get("feed_id", 0))
         if is_bookmark:
             bookmark, _created = Bookmark.objects.get_or_create(
-                feed_id=feed_id, user_id=request.user.pk
+                feed_id=feed_id, user_id=current_user.pk
             )
             if not _created:
                 bookmark.delete()
-                return JsonResponse({"removed": True})
-            return JsonResponse({"added": True})
+                return JsonResponse({"feed_id": feed_id, "removed": True})
+            return JsonResponse({"feed_id": feed_id, "added": True})
 
         # else if comment
-        comment = data.get("form[0][value]")
+        comment = data.get("comment")
         if not comment:
-            return JsonResponse({"success": False})
-        print(data)
-        return JsonResponse({"success": True})
+            return JsonResponse({"feed_id": feed_id, "success": False})
+
+        Comment.objects.create(
+            feed_id=feed_id, author_id=current_user.pk, text=comment
+        )
+        return JsonResponse(
+            {
+                "feed_id": feed_id, "success": True, "comment": comment,
+                "email": current_user.email
+            }
+        )
 
     def get(self, request, user_id):
         current_user_id = request.user.pk

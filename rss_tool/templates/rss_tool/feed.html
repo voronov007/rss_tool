@@ -9,13 +9,17 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">{{ f.title }}
-        <a href="#" name="{{f.id}}" class="bookmark">
+
         {% if f.is_favorite %}
-        Favorite
-        {% else %}
-        Add to favorites
-        {% endif %}
+        <a href="#" name="{{f.id}}" class="bookmark added">
+            Remove from favorites
         </a>
+        {% else %}
+        <a href="#" name="{{f.id}}" class="bookmark removed">
+            Add to favorites
+        </a>
+        {% endif %}
+
     </h5>
     <p class="card-text">{{ f.description }}</p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_{{f.id}}" aria-expanded="false" aria-controls="collapseExample">
