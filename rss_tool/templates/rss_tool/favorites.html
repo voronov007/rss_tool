@@ -21,10 +21,11 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">{{ f.channel.title }} | {{ f.title }}
-
-
+        <a href="#" name="{{f.id}}" class="remove_bookmark">
+            Remove from favorites
+        </a>
     </h5>
-    <p class="card-text">{{ f.description }}</p>
+    <p class="card-text">{{ f.channel.user.email }} <br>{{ f.description }}</p>
     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse_{{f.id}}" aria-expanded="false" aria-controls="collapseExample">
         Comments <span class="badge badge-pill badge-secondary">{{ f.comments.count }}</span>
     </button>
@@ -72,4 +73,5 @@
 
 {% block additional_scripts %}
 <script src="{% static 'rss_tool/js/rss.js' %}"></script>
+<script src="{% static 'rss_tool/js/favorites.js' %}"></script>
 {% endblock %}

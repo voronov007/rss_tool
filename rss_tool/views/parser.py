@@ -2,22 +2,17 @@ from django.shortcuts import render
 from django.views import View
 
 from rss_tool.forms import RSSForm
+from rss_tool.utils.parser import rss_xml_parser
 from rss_tool.utils.validators import validate_url
-from rss_tool.utils.parser import rss_xml_parser_algemeen, parser_exist
-
 
 # from .models import RSS
 __all__ = [
     'UrlParserView'
 ]
 
-parsers = {
-    "nu.nl/rss/Algemeen": rss_xml_parser_algemeen
-}
-
 
 class UrlParserView(View):
-    template_name = 'rss_tool/index.html'
+    template_name = 'rss_tool/parser.html'
     form_class = RSSForm
     data = {
         'section': {'title': "RSS Tool"},
@@ -26,6 +21,7 @@ class UrlParserView(View):
 
     def get(self, request, *args, **kwargs):
         self.data["form"] = self.form_class()
+
         return render(request, self.template_name, self.data)
 
     def post(self, request, *args, **kwargs):
@@ -40,14 +36,12 @@ class UrlParserView(View):
             if not url:
                 errors.append("Incorrect RSS url address. Please fix it")
 
-            if not parser_exist(parsers, url):
-                 errors.append("There is no parser for the listed url")
-
             if not errors:
                 self.data["success"] = "RSS parsing started. Please, be patient"
                 # show an empty form
                 self.data["form"] = self.form_class()
-                rss_xml_parser_algemeen(url, request.user.id)
+                # run parsing
+                rss_xml_parser(url, request.user.id)
                 return render(request, self.template_name, self.data)
             else:
                 self.data["errors"] = errors

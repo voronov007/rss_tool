@@ -21,8 +21,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
       {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'rss:explore' %}">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'rss:parser' %}">Parser</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'rss:favorites' %}">Favorites</a>
           </li>
         </ul>
           <span>Welcome, <a href="#">{{ user.email }}</a></span>

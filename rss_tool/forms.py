@@ -8,4 +8,3 @@ class RSSForm(forms.Form):
 class CommentForm(forms.Form):
     comment = forms.CharField(label='Comment', max_length=150)
     feed_id = forms.IntegerField(widget=forms.HiddenInput())
-

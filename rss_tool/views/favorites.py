@@ -1,7 +1,4 @@
-from django.contrib.auth.models import User
 from django.core.paginator import Paginator
-from django.db.models import Exists, OuterRef
-from django.http import Http404
 from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.views import View
@@ -9,44 +6,35 @@ from django.views import View
 from rss_tool.forms import CommentForm
 from rss_tool.models import Feed, Bookmark, Comment
 
-__all__ = ['FeedsView']
+__all__ = ['FavoritesView']
 
 
-class FeedsView(View):
+class FavoritesView(View):
     form_class = CommentForm
-    template_name = 'rss_tool/feed.html'
+    template_name = 'rss_tool/favorites.html'
 
-    def get(self, request, user_id):
+    def get(self, request):
         current_user_id = request.user.pk
-        user = User.objects.filter(pk=user_id).first()
-        if not user:
-            raise Http404("User not exist")
 
         # get feeds and check if feed is in favorites
-        bookmark = Bookmark.objects.filter(user_id=current_user_id, feed_id=OuterRef('pk'))
         feeds = Feed.objects.prefetch_related(
             'comments__author'
+        ).select_related(
+            "channel__user"
         ).filter(
-            channel__user_id=user.pk
-        ).annotate(
-            is_favorite=Exists(bookmark)
+            bookmarks__user_id=current_user_id
         ).order_by("-pub_date")
 
         # use pagination
-        paginator = Paginator(feeds, 25)
+        paginator = Paginator(feeds, 10)
         page = request.GET.get('page')
         feeds_per_page = paginator.get_page(page)
 
         has_next = feeds_per_page.has_next()
         has_previous = feeds_per_page.has_previous()
-        if current_user_id == user_id:
-            h1 = "Your feeds"
-        else:
-            h1 = f"{user.email} feeds"
 
         template_data = {
-            "h1": h1,
-            "email": user.email,
+            "h1": "Favorites",
             "feeds": feeds_per_page,
             "pagination": {
                 "has_previous": has_previous,
@@ -66,13 +54,12 @@ class FeedsView(View):
         is_bookmark = data.get("bookmark")
         feed_id = int(data.get("feed_id", 0))
         if is_bookmark:
-            bookmark, _created = Bookmark.objects.get_or_create(
+            bookmark = Bookmark.objects.filter(
                 feed_id=feed_id, user_id=current_user.pk
-            )
-            if not _created:
-                bookmark.delete()
+            ).first()
+            if bookmark:
                 return JsonResponse({"feed_id": feed_id, "removed": True})
-            return JsonResponse({"feed_id": feed_id, "added": True})
+            return JsonResponse({"feed_id": feed_id, "removed": False})
 
         # else if comment
         comment = data.get("comment")

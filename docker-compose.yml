@@ -4,6 +4,10 @@ services:
   sendcloud_db_service:
     image: postgres:9.6
     env_file: ./.env
+    environment:
+      - POSTGRES_USER=$DATABASE_USER
+      - POSTGRES_DB=$DATABASE_NAME
+      - POSTGRES_PASSWORD=$DATABASE_PASSWORD
     ports:
       - "$DATABASE_PORT:$DATABASE_PORT"
     container_name: sendcloud_db_service_c

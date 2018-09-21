@@ -17,7 +17,7 @@ class ExploreView(View):
             feeds_count=Count('channels__feeds')
         ).filter(
             Q(feeds_count__gte=1), ~Q(id=request.user.pk)
-        ).all()
+        ).order_by("id")
 
         # use pagination
         paginator = Paginator(users, 25)
