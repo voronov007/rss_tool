@@ -18,14 +18,12 @@ $(document).ready(function() {
                 console.log(json);
                 let feed_id = json.feed_id;
                 let bookmark = $("a[name='" + feed_id + "']");
-                // change bookmark value
-                if (bookmark.hasClass("added")){
-                    bookmark.html("Add to favorites");
-                    bookmark.removeClass("added").addClass("removed");
+                if (json.removed === true)
+                {
+                    location.reload();
                 }
                 else{
-                    bookmark.html("Remove from favorites");
-                    bookmark.removeClass("removed").addClass("added");
+                    alert("Error occurred!");
                 }
 
             }

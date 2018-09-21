@@ -46,7 +46,7 @@ class FavoritesView(View):
 
         return render(request, self.template_name, template_data)
 
-    def post(self, request, user_id):
+    def post(self, request):
         data = request.POST
         current_user = request.user
 
@@ -58,6 +58,7 @@ class FavoritesView(View):
                 feed_id=feed_id, user_id=current_user.pk
             ).first()
             if bookmark:
+                bookmark.delete()
                 return JsonResponse({"feed_id": feed_id, "removed": True})
             return JsonResponse({"feed_id": feed_id, "removed": False})
 
