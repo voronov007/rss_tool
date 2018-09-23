@@ -1,0 +1,586 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$i2cNx5xQ4pXY$UScLD4l3mrKyO4/DoJJTQ0dPOKajthRHslkGqMwjraA=",
+      "last_login": "2018-09-23T08:38:57.011Z",
+      "is_superuser": false,
+      "username": "test@test.com",
+      "first_name": "",
+      "last_name": "",
+      "email": "test@test.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2018-09-23T08:38:56.819Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$120000$FVQhTAMjbQ2r$aKmrwCImFarRoFtw2aIbGLXrZg3xTHX7cp0xDIlHMxs=",
+      "last_login": "2018-09-23T08:41:05.583Z",
+      "is_superuser": false,
+      "username": "john@gmail.com",
+      "first_name": "",
+      "last_name": "",
+      "email": "john@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2018-09-23T08:41:05.408Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "rss_tool.channel",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "title": "NU - Algemeen",
+      "link": "https://www.nu.nl/algemeen",
+      "last_build": "2018-09-23T08:33:27Z"
+    }
+  },
+  {
+    "model": "rss_tool.channel",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "title": "Tweakers Mixed RSS Feed",
+      "link": "https://tweakers.net/",
+      "last_build": "2018-09-23T08:37:01Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 1,
+    "fields": {
+      "channel": 1,
+      "title": "Nepal bereikt als eerste land verdubbeling tijgers in het wild",
+      "description": "Nepal lijkt het eerste land te worden dat de zogeheten TX2-doelstelling haalt: een verdubbeling van de wildetijgerpopulatie in 2022. TX2 is een akkoord dat dertien landen in 2010 sloten om de schrikbarende terugloop van deze dieren in het wild actief tegen te gaan.",
+      "pub_date": "2018-09-23T08:09:26Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 2,
+    "fields": {
+      "channel": 1,
+      "title": "Ook Nieuw-Zeeland slaat alarm om naalden in aardbeien ",
+      "description": "Een Nieuw-Zeelands supermarktketen heeft alarm geslagen nadat naalden waren aangetroffen in aardbeien. Het betreffende fruitmerk wordt uit de schappen gehaald, bericht de krant<em> The New Zealand Herald</em>.",
+      "pub_date": "2018-09-23T08:33:27Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 3,
+    "fields": {
+      "channel": 1,
+      "title": "Bertens pakt in Seoul zevende WTA-titel uit loopbaan",
+      "description": "Kiki Bertens heeft zondag in Seoul de zevende WTA-titel uit haar loopbaan gewonnen. De 26-jarige Wateringse was in de finale in drie sets te sterk voor de Australische Alja Tomljanovic: 7-6 (2), 4-6 en 6-2.&nbsp;",
+      "pub_date": "2018-09-23T08:31:58Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 4,
+    "fields": {
+      "channel": 1,
+      "title": "Deel metrolijnen in Amsterdam rijdt niet door mobilofoonstoring",
+      "description": "Een mobilofoonstoring veroorzaakt zondagochtend grote problemen voor het openbaar vervoer in Amsterdam. Bijna alle metrolijnen zijn voor onbepaalde tijd buiten gebruik. Metro's 50 en 54 begonnen omstreeks 9.45 uur beperkt weer te rijden.",
+      "pub_date": "2018-09-23T07:56:55Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 5,
+    "fields": {
+      "channel": 1,
+      "title": "Inzameling slachtoffers en nabestaanden ongeluk Oss nadert 2 ton",
+      "description": "De inzamelingsactie voor de slachtoffers en nabestaanden van het spoordrama in Oss nadert de 2 ton. Al meer dan 12.000 mensen hebben geld gedoneerd via de website die een meelevende burger heeft geopend in samenspraak met de gemeente Oss.",
+      "pub_date": "2018-09-23T07:23:11Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 6,
+    "fields": {
+      "channel": 1,
+      "title": "'Britse premier May onderzoekt verkiezingen in november'",
+      "description": "Medewerkers van de Britse premier Theresa May werken aan een crisisplan voor vervroegde verkiezingen in november. Volgens de<em> Sunday Times</em> onderzoeken leden van Mays politieke kabinet of de premier op die manier electorale steun kan krijgen voor een nieuw brexit-plan.",
+      "pub_date": "2018-09-23T06:35:49Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 7,
+    "fields": {
+      "channel": 1,
+      "title": "Aftrappen: Van Bommel is een Ajax-beul, Ten Hag troeft Bosz af",
+      "description": "Iedere week bespreekt NU.nl opvallende feitjes rond Eredivisiewedstrijden. Met vandaag: Ten Hag doet het beter met Ajax dan Peter Bosz en Mark van Bommel is een Ajax-beul.",
+      "pub_date": "2018-09-23T04:04:02Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 8,
+    "fields": {
+      "channel": 1,
+      "title": "Orka Morgan bevallen in zeepark Tenerife",
+      "description": "Orka Morgan is zaterdag bevallen in het zeepark op Tenerife waar het dier verblijft. Moeder en kalfje maken het goed. Dat laat het dierenpark Loro Parque weten op de website.",
+      "pub_date": "2018-09-23T06:23:29Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 9,
+    "fields": {
+      "channel": 1,
+      "title": "'Iran roept Nederlandse ambassadeur ter verantwoording na aanval parade'",
+      "description": "Iran heeft de ambassadeurs uit Nederland, Denemarken en het Verenigd Koninkrijk ter verantwoording geroepen na de dodelijke aanval op de militaire parade. Dit meldt het&nbsp;\u200bIraanse staatspersbureau IRNA zaterdag.&nbsp;",
+      "pub_date": "2018-09-22T22:04:58Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 10,
+    "fields": {
+      "channel": 1,
+      "title": "China stopt militaire besprekingen met VS na sancties om wapens",
+      "description": "China heeft militaire besprekingen met de Verenigde Staten geannuleerd, vanwege sancties die de VS heeft opgelegd voor het kopen van Russische gevechtsvliegtuigen.&nbsp;",
+      "pub_date": "2018-09-23T05:37:34Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 11,
+    "fields": {
+      "channel": 2,
+      "title": "'Google-memo toont welke gegevens bij Chinese zoekmachine worden bijgehouden'",
+      "description": "Er lijkt een interne Google-memo uitgelekt te zijn die details onthuld over hoe Google, en waarschijnlijk de Chinese overheid, gebruikers van zijn Chinese zoekmachine gaat volgen. Zo worden onder andere gebruikte ip-adressen en links waar op wordt geklikt gelogd.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/PdfTgT5A4CY\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-23T07:39:22Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 12,
+    "fields": {
+      "channel": 2,
+      "title": "De lange weg naar Android 1.0",
+      "description": "Op 23 september 2008 kondigden Google, HTC en T-Mobile de G1 aan, de eerste Android-smartphone. Het was een lange weg voordat die telefoon eindelijk het levenslicht zag.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/a-fHUqBidvM\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-23T04:01:00Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 13,
+    "fields": {
+      "channel": 2,
+      "title": "Techjuwelen - T-Mobile G1 - De eerste Android-smartphone",
+      "description": "Op driekwart van de nu verkochte smartphones staat Android. Dat begon allemaal tien jaar geleden met de eerste Android-telefoon: de T-Mobile G1.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/iTKq3DcfrR0\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-23T04:00:00Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 14,
+    "fields": {
+      "channel": 2,
+      "title": "Tor Browser 8.0.1",
+      "description": "Versie 8.0.1 van Tor Browser is uitgekomen. Tor staat voor The Onion Router en is een netwerk dat gebruikt kan worden om redelijk anoniem over internet te surfen. Al het tcp-verkeer van gebruikers wordt langs verschillende Tor-routers geleid, waarna het voor de ontvanger vrijwel niet meer mogelijk is om na te gaan wie de oorspronkelijke verzender was. Binnen het Tor-netwerk is die informatie nog wel aanwezig, zodat antwoorden, uiteraard ook weer via het stelsel van routers, uiteindelijk weer op de juiste plek aankomen. De release notes voor deze uitgave zien er als volgt uit:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/pP5lc-5ciPo\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T19:25:35Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 15,
+    "fields": {
+      "channel": 2,
+      "title": "Newsbin Pro 6.81",
+      "description": "Versie 6.81 van NewsBin Pro is kort geleden uitgekomen. Met dit programma kunnen bestanden, zoals foto's, video's en programma's, van usenet worden gehaald. Het heeft alles wat je van een usenet-downloader mag verwachten, zoals ondersteuning voor multithreading, ssl en autopar. Verder zijn er uitgebreide filtermogelijkheden en kan er van een optionele Usenet-search-service gebruikgemaakt worden. In versie 6.81 zijn de volgende verbeteringen aangebracht:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/WHbh72xhxPE\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T13:56:56Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 16,
+    "fields": {
+      "channel": 2,
+      "title": "AMD Radeon Software Adrenalin Edition 18.9.2",
+      "description": "AMD heeft een nieuwe update van zijn Radeon Software Adrenalin Edition-drivers uitgebracht. De drivers zijn alleen geschikt voor de HD 7750 en hoger, de HD 8570 en hoger, en de kaarten uit de R5-, R7- R9- en RX-series. Van Windows worden alleen versies 7 en 10 ondersteund. Voor mensen die Windows 8.1 gebruiken, is versie 17.7.1 de laatste versie. Drivers voor de eerste generatie van Windows 8 worden helemaal niet meer gemaakt. Voor oudere kaarten, die nu als legacy of non-gcn worden aangeduid, is Catalyst Software Suite versie 15.7.1 de laatste stabiele uitgave.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/8jS6z52R3ts\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T10:37:36Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 17,
+    "fields": {
+      "channel": 2,
+      "title": "Google-app bevat afbeelding van dock voor Pixel 3-smartphone",
+      "description": "Er is een afbeelding verschenen van de Pixel Stand, de vermoedelijke dock die Google wil uitbrengen voor zijn aankomende Pixel 3-smartphones. Het gaat vooralsnog om een animatie, en niet om een foto van de daadwerkelijke hardware.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/lay_ZMMF31U\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T10:32:03Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 18,
+    "fields": {
+      "channel": 2,
+      "title": "Elon Musk geeft renders vrij van SpaceX Marsbasis en Marsraket",
+      "description": "SpaceX-topman Elon Musk heeft renders vrijgegeven van een basis op Mars. Daarop is te zien hoe het bedrijf een basis op de rode planeet voor zich ziet, en hoe de nieuwe Big Falcon Rocket zal worden vormgegeven. Gedetailleerde plannen ontbreken echter nog.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/MrP_Y84HepI\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T09:19:23Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 19,
+    "fields": {
+      "channel": 2,
+      "title": "Telltale Games sluit de deuren en ontslaat overgroot deel personeel",
+      "description": "Telltale Games heeft aangekondigd dat het gaat sluiten, een beslissing die gevolgd werd door het ontslag van het overgrote deel van het personeel. Er blijven voorlopig nog 25 mensen werken bij Telltale om aan bepaalde verplichtingen te voldoen.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/-MUnVe39mZs\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T07:41:58Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 20,
+    "fields": {
+      "channel": 2,
+      "title": "Api-fout Twitter zorgde mogelijk dat bericht bij verkeerde ontvanger belandde",
+      "description": "Twitter heeft melding gemaakt van een fout in zijn api, waardoor er mogelijk Direct Messages van gebruikers bij de verkeerde ontvanger zijn beland. Twitter weet niet of er daadwerkelijk berichten fout zijn bezorgd, en er zou slechts een klein deel van de gebruikers getroffen zijn.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/cq-emh2ZU3E\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T06:58:41Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 21,
+    "fields": {
+      "channel": 2,
+      "title": "Pro Evolution Soccer 2019 - Haperende AI tackelt goed voetbalspel",
+      "description": "PES 2019 doet veel goed en zet op diverse punten een stap vooruit. Het wordt echter gehinderd door rare fratsen van de AI in de singleplayer, die gameplay niet ten goede komen.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/jvCx4hniv9A\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-22T04:00:00Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 22,
+    "fields": {
+      "channel": 2,
+      "title": "Mozilla Firefox 62.0.2",
+      "description": "Mozilla heeft een update voor versie 62 van zijn webbrowser Firefox uitgebracht, de zesde versie gebaseerd op Firefox Quantum. De browser heeft met Quantum niet alleen een nieuw uiterlijk en logo gekregen, ook onder de motorkap is er veel veranderd. Zo zijn de prestaties van de browser engine twee keer zo snel als een Mozilla Firefox van zes maanden geleden, zijn de zoek- en adresbalk gecombineerd en is er veel aan de beveiliging gesleuteld. Als een gevolg daarvan worden zogenaamde legacy extensies niet meer ondersteund. In versie 62.0.2 zijn de volgende verbeteringen aangebracht:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/Eo_hiCeiNCo\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T20:40:51Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 23,
+    "fields": {
+      "channel": 2,
+      "title": "Planet Coaster krijgt een Thememaker's Toolkit",
+      "description": "Frontier Developments geeft ontwerpers en spelers van Planet Coaster de mogelijkheid zelf 3d-modellen voor het spel te maken en deze te delen met anderen. De Thememaker's Toolkit komt gratis beschikbaar.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/8IngUkf5ya4\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T18:23:57Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 24,
+    "fields": {
+      "channel": 2,
+      "title": "Bitmain start productie 7nm-asic voor minen cryptovaluta",
+      "description": "De Chinese chipontwerper Bitmain kondigt de massaproductie van de BM1391 aan. Het is zijn eerste 7nm-asic, voor het minen van cryptovaluta op basis van het sha256-algoritme. Bitmain gaat Antminer-systemen met de nieuwe chips uitrusten.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/8V9Q8H_0O0E\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T17:43:38Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 25,
+    "fields": {
+      "channel": 2,
+      "title": "GeForce Game Ready Driver 411.63 WHQL",
+      "description": "Nvidia heeft nieuwe stabiele GeForce-drivers uitgebracht. De drivers dragen versienummer 411.63 WHQL, zijn geschikt voor Windows 7 en hoger en kunnen worden gebruikt op kaarten gebaseerd op de Kepler-architectuur of nieuwer. Deze uitgave bevat onder meer optimalisaties voor de spellen Assassin's Creed Odyssey, Forza Horizon 4 en FIFA 19. Daarnaast is ondersteuning voor kaarten met een RTX 2080 en RTX 2080 Ti toegevoegd. De changelog laat natuurlijk ook weer bugfixes zien en een handvol problemen die wel al bekend zijn, maar waar nog geen oplossing voor is. De complete release notes staan hieronder:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/hXxFs9R4co0\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T17:36:48Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 26,
+    "fields": {
+      "channel": 2,
+      "title": "Magento 2.2.6",
+      "description": "Magento is een opensource-contentmanagementplatform dat zich richt op e-commerce. Magento draait op een omgeving met Linux, Apache, MySQL en PHP. Het pakket is in twee smaken beschikbaar, namelijk Magento Open Source en Magento Commerce, die voorheen als Community Edition en Enterprise Edition bekend stonden. Voor meer informatie over dit platform verwijzen we naar deze pagina, waar wordt ingegaan op de architectuur. Versie 2.2.6 is al weer een aantal dagen beschikbaar en werd als volgt aangekondigd:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/Rx5leE7GXBU\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T17:21:28Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 27,
+    "fields": {
+      "channel": 2,
+      "title": "Cyberduck 6.8.0",
+      "description": "Versie 6.8.0 van Cyberduck is uitgekomen. Dit programma, dat onder een gpl-licentie wordt uitgebracht, is een ftp-, sftp- en webdav-client, en heeft daarnaast ondersteuning voor diverse cloudopslagdiensten die van S3 of de OpenStack-api gebruikmaken. Het programma beschikt over een overzichtelijke interface en ondersteunt technieken als Spotlight, Bonjour, Keychain, Applescript en Growl. Daarnaast kun je gebruikmaken van verschillende, al ge\u00efnstalleerde teksteditors, waaronder BBEdit, TextWrangler, TextMate, Mi, Smultron en CSSEdit. Cyberduck is in een groot aantal talen te gebruiken, waaronder het Nederlands. Sinds versie 6.7.0 zijn de volgende veranderingen en verbeteringen aangebracht:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/INmRpYftv6c\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T17:17:24Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 28,
+    "fields": {
+      "channel": 2,
+      "title": "Intel maakt Optane-ssd's van 1,5TB beschikbaar",
+      "description": "Intel voegt 1,5TB-varianten toe aan zijn lijn Optane-ssd's. De hogere opslagcapaciteit komt zowel naar de Optane 905P-lijn voor consumenten als naar de P4800X, die voor de enterprisemarkt bedoeld is.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/8gAzzS03h4s\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T16:29:11Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 29,
+    "fields": {
+      "channel": 2,
+      "title": "OnePlus brengt OxygenOS 9 op basis van Android Pie uit voor de OnePlus 6",
+      "description": "OnePlus heeft OxygenOS 9.0 op basis van Android 9.0 Pie voor de OnePlus 6 beschikbaar gemaakt. Vanaf deze release van OxygenOS, blijven de versienummers van het OS en Android gelijklopen.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/qBOYzUtDFAY\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T15:54:01Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 30,
+    "fields": {
+      "channel": 2,
+      "title": "Afbeelding toont mogelijk Google Pixelbook-tablet met verwisselbaar toetsenbord",
+      "description": "Er is een render verschenen van wat mogelijk een nieuwe Pixelbook van Google is. Het gaat om een 2-in-1-apparaat met tablet en afzonderlijk toetsenborddeel. Aan de bovenzijde van het scherm zit een uitsparing voor vermoedelijk de vingerafdrukscanner.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/F64fiYHJKQI\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T15:07:24Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 31,
+    "fields": {
+      "channel": 2,
+      "title": "Werknemer RuneScape-ontwikkelaar stal geld van spelers",
+      "description": "Een ex-werknemer van Jagex, ontwikkelaar en uitgever van RuneScape, drong diverse Old School RuneScape-accounts binnen en plaatste in-game geld over. De waarde van het gestolen geld loopt mogelijk in de duizenden dollars.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/XhvmI4Slae8\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T14:56:56Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 32,
+    "fields": {
+      "channel": 2,
+      "title": "FastStone Image Viewer 6.6",
+      "description": "FastStone Soft heeft versie 6.6 van zijn programma Image Viewer uitgebracht. FastStone Image Viewer is gratis, klein en snel, en zit boordevol doordachte functionaliteit voor het bekijken en bewerken van afbeeldingen, zoals roteren (lossless voor jpeg), uitsnijden, vergroten en verkleinen, verwijderen van het rode-ogeneffect, draaien van de foto om een scheve horizon te corrigeren, en aanpassen van kleuren, contrast en helderheid. De gebruikersinterface is meertalig en onder andere in het Nederlands te gebruiken. Sinds versie 6.3 kan het ook video's afspelen. In deze uitgave zijn verder nog de volgende veranderingen en verbeteringen doorgevoerd:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/lNjl23Pt1UQ\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T14:24:17Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 33,
+    "fields": {
+      "channel": 2,
+      "title": "AIDA64 5.98 build 4800",
+      "description": "FinalWire heeft een nieuwe versie van AIDA64 uitgebracht. Dit programma is de opvolger van Everest, dat op zijn beurt de opvolger van AIDA32 en AIDA16 was. Met AIDA64 kan een uitgebreid overzicht van alle in de computer aanwezige hard- en software worden verkregen. Vooral handig zijn de directe links naar de pagina's waar specifieke drivers en firmware van de diverse onderdelen kunnen worden gedownload. Daarnaast kunnen er diverse benchmarks mee worden uitgevoerd en is er uitgebreide hardwaremonitoring. AIDA64 is beschikbaar in de versies Extreme, Engineer, Business en Network Audit, en met prijzen die beginnen bij 40 dollar voor een persoonlijke licentie. De changelog voor versie 5.98 ziet er als volgt uit:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/FvTodjQwSHo\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T14:18:37Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 34,
+    "fields": {
+      "channel": 2,
+      "title": "SyncBackFree 8.5.90.0",
+      "description": "2Brightsparks heeft versie 8.5.90.0 uitgebracht van SyncBackFree. Dit programma is de eenvoudigste en daarmee meteen ook de gratis uitvoering van de back-upsoftware die dit bedrijf in de aanbieding heeft. Naast back-ups maken kan SyncBackFree data synchroniseren. Dit kan naar een locatie op dezelfde of een andere schijf, of naar een ander medium, zoals een cd-rw of usb-stick, of naar een ftp-server of ziparchief.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/HNyj7CPZ5Gw\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T14:11:23Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 35,
+    "fields": {
+      "channel": 2,
+      "title": "BurnAware 11.6",
+      "description": "Versie 11.6 van het cd-, dvd- en blu-ray-brandprogramma BurnAware is uitgekomen. Dit programma is beschikbaar in een Free-versie en in betaalde Premium- en Professional-edities, met prijzen van respectievelijk 20 en 40 dollar. Deze uitvoeringen hebben extra functionaliteit, zoals voor het kopi\u00ebren van schijfjes en het rippen van audio-cd's. Op deze pagina worden de verschillende edities tegen elkaar afgezet. De changelog voor deze uitgave ziet er als volgt uit:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/HLKtmytVm_Q\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T14:07:11Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 36,
+    "fields": {
+      "channel": 2,
+      "title": "iOS 12-benchmarks",
+      "description": "Maakt iOS 12 iPhones sneller en gaat de accu langer mee? Wij deden testen met iPhones van vier generaties om dat vast te stellen.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/D2n3w5F4Smw\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T14:00:00Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 37,
+    "fields": {
+      "channel": 2,
+      "title": "Spotify controleert locatie gebruikers Premium for Family-abonnement via gps",
+      "description": "Spotify stuurt bij een test e-mails naar gebruikers van een Premium for Family-abonnement, in ieder geval in Duitsland, met de vraag het adres te bevestigen. Wie doorklikt zou echter via gps de locatie moeten doorgeven.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/IaPmvSzdMTc\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T13:54:26Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 38,
+    "fields": {
+      "channel": 2,
+      "title": "Servers grote failliete computerwinkel waren te koop met alle data er nog op",
+      "description": "De servers en harde schijven van de Canadese failliete computerwinkel Netlink Computer Inc., of NCIX, werden te koop aangeboden zonder dat deze schoongeveegd waren. Op de systemen stonden onder andere details van creditcardbetalingen.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/5n6EW7MTbUA\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T12:30:06Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 39,
+    "fields": {
+      "channel": 2,
+      "title": "StartIsBack++ 2.7.1",
+      "description": "Nadat Microsoft in Windows 8 het klassieke startmenu de wacht aanzegde, verschenen er al snel diverse gratis en betaalde tooltjes die dit alsnog toevoegden. StartIsBack is daar een voorbeeld van en valt in de laatste categorie. Het voegt een startknop en een startmenu aan Windows 8 en 10 toe, die werken zoals dat het geval was in Windows 7 en eerder. Zowel het uiterlijk als de functionaliteit is geheel naar persoonlijke smaak aan te passen. De versie met een plus aan het eind is voor Windows 8.1. De versie zonder plus is geschikt voor Windows 8. Heeft het programma een dubbele plus aan het eind dan kan hij op Windows 10 worden gebruikt. Een licentie voor het programma kost drie, vijf of tien dollar en mag daarvoor op een, twee of vijf computers worden gebruikt. In deze uitgave zijn de volgende veranderingen en verbeteringen aangebracht:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/2HdJ2aax9Fw\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T11:47:28Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 40,
+    "fields": {
+      "channel": 2,
+      "title": "Bulk Crap Uninstaller 4.9",
+      "description": "Klocman Software heeft versie 4.9 van Bulk Crap Uninstaller uitgebracht. Met dit programma, dat onder een opensourcelicentie wordt uitgebracht, kunnen in een keer diverse programma's en Windows Store-apps van de computer worden verwijderd. Het voert eerst de standaard verwijderprocedure uit en scant vervolgens de computer op overgebleven snelkoppelingen en registersleutels om die ook nog te verwijderen. Na afloop kunnen eventueel ook nog externe programma's zoals CCleaner worden gestart. Ten slotte bevat het een start-upmanager, waarmee programma's die met Windows meestarten, uitgeschakeld kunnen worden. In deze uitgave zijn de volgende verbeteringen aangebracht:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/j6fyUCizD84\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T11:15:21Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 41,
+    "fields": {
+      "channel": 2,
+      "title": "Mp3tag 2.90",
+      "description": "Florian Heidenreich heeft versie 2.90 van Mp3tag uitgebracht. Met dit programma kunnen de metatags van de meest gangbare muziekformaten worden aangepast. Ondersteuning is aanwezig voor ID3v1, ID3v2.3, ID3v2.4, mp4, wma, Vorbis-comments en Ape-tags. Verder kunnen de bestandsnamen aan de hand van die tags worden aangepast en kunnen playlists worden gegenereerd. In deze uitgave zijn de volgende veranderingen en verbeteringen doorgevoerd:<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/1a0W0pOO3Uc\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T11:02:57Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 42,
+    "fields": {
+      "channel": 2,
+      "title": "Blizzard waarschuwt gebruikers van dataverzamelingssoftware in Overwatch",
+      "description": "Blizzard heeft een waarschuwing gestuurd naar Overwatch-spelers die gebruik maken van dataverzamelingssoftware zoals Visor en Pursuit. Wie de software gebruikt, riskeert dat zijn of haar account wordt opgeheven.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/WpM1gDLIVXg\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T09:34:31Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 43,
+    "fields": {
+      "channel": 2,
+      "title": "Nederlandse politie lost relatief weinig geregistreerde hackzaken op",
+      "description": "Het Centraal Bureau voor de Statistiek meldt dat de Nederlandse politie in 2017 4,6 procent van de geregistreerde misdrijven in de categorie computervredebreuk heeft opgehelderd. In absolute zin daalt dit aantal opgehelderde misdrijven sinds 2012.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/yeJ1S5A_70U\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T09:26:37Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 44,
+    "fields": {
+      "channel": 2,
+      "title": "Foto's tonen veel Intel Z390-moederborden van Asus en MSI",
+      "description": "Er zijn foto's verschenen van verschillende Z390-moederborden van MSI en van Asus. Onder andere een Godlike-variant van MSI staat op de foto, een groot moederbord van het e-atx-formaat, dat geleverd wordt met diverse extra's.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/oxpERTlS6s0\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T09:07:37Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 45,
+    "fields": {
+      "channel": 2,
+      "title": "Sony verkocht 3,3 miljoen exemplaren van PS4-game Spider-Man in drie dagen",
+      "description": "Sony heeft in de eerste drie dagen na de release van Marvel's Spider-Man meer dan 3,3 miljoen exemplaren van de game verkocht. Dat is inclusief een miljoen pre-orders. Spider-Man heeft daarmee God of War ingehaald als snelst verkopende first party-game.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/9afyuWaa8xs\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T08:31:13Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 46,
+    "fields": {
+      "channel": 2,
+      "title": "Canon presenteert SX70 HS-compactcamera met 65x zoom en 4k-filmfunctie",
+      "description": "Canon heeft de PowerShot SX70 HS aangekondigd. De opvolger van de SX60 HS behoudt het objectief met 65x optische zoom; nieuw is de 4k-filmfunctie en de mogelijkheid om foto's in cr3-raw-formaat te schieten.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/e-M1a19tFTs\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T07:58:00Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 47,
+    "fields": {
+      "channel": 2,
+      "title": "'Panasonic, Leica, Sigma werken samen aan fullframecamerasysteem met L-vatting'",
+      "description": "Volgens een gerucht hebben Panasonic, Leica en Sigma de handen ineen geslagen om te komen tot een nieuw spiegelloos camerasysteem met een fullframesensor. Het systeem zou gebruikmaken van de bestaande Leica L-vatting.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/LRNY0kp-1ko\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T07:57:06Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 48,
+    "fields": {
+      "channel": 2,
+      "title": "Aanwijzingen tonen dat Apple nog niet is gestopt met ontwikkeling AirPower",
+      "description": "Aanwijzingen laten zien dat Apple nog steeds bezig is met zijn draadloze lader AirPower. De verpakking van de iPhone XS en code in de onlangs uitgebrachte b\u00e8ta van iOS 12.1 noemen AirPower bij naam.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/CLbo1eKBU_E\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T05:50:20Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 49,
+    "fields": {
+      "channel": 2,
+      "title": "Chinese overheid blokkeert Twitch",
+      "description": "De Chinese overheid heeft gamestreamdienst Twitch geblokkeerd. De site is naar verluidt niet meer bereikbaar vanuit het land en de app voor iOS is verdwenen vanuit de App Store. Het is onbekend waarom dat is.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/kzbssUtsepA\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T05:32:54Z"
+    }
+  },
+  {
+    "model": "rss_tool.feed",
+    "pk": 50,
+    "fields": {
+      "channel": 2,
+      "title": "Gerucht: Facebook kondigt slimme speaker Portal volgende week aan",
+      "description": "Facebook zou volgende week zijn slimme speaker met touchscreen Portal willen presenteren. De presentatie zou eerder plaatsvinden, maar het bedrijf stelde de presentatie uit naar aanleiding van het privacyschandaal rond Cambridge Analytica eerder dit jaar.<img src=\"http://feeds.feedburner.com/~r/tweakers/mixed/~4/MNA8y0f0niw\" height=\"1\" width=\"1\" alt=\"\"/>",
+      "pub_date": "2018-09-21T05:18:39Z"
+    }
+  },
+  {
+    "model": "rss_tool.comment",
+    "pk": 1,
+    "fields": {
+      "feed": 1,
+      "author": 1,
+      "text": "This is my first comment!",
+      "pub_date": "2018-09-23T08:40:21.861Z"
+    }
+  },
+  {
+    "model": "rss_tool.comment",
+    "pk": 2,
+    "fields": {
+      "feed": 2,
+      "author": 2,
+      "text": "Nice feed! Really cool.",
+      "pub_date": "2018-09-23T08:42:01.022Z"
+    }
+  },
+  {
+    "model": "rss_tool.bookmark",
+    "pk": 1,
+    "fields": {
+      "feed": 2,
+      "user": 2
+    }
+  }
+]

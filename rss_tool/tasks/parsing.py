@@ -3,6 +3,7 @@ from xml.etree import ElementTree as etree
 import requests
 from django.utils.timezone import datetime as dt
 
+from sendcloud.celery import app
 from rss_tool.models.feed import Channel, Feed
 
 dt_patterns = {
@@ -11,7 +12,8 @@ dt_patterns = {
 }
 
 
-def rss_xml_parser(url: str, user_id):
+@app.task()
+def rss_xml_parser(url: str, user_id:int):
     datetime_pattern = None
     r = requests.get(url)
     # print(r.text)

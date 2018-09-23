@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 
 from rss_tool.forms import RSSForm
-from rss_tool.utils.parser import rss_xml_parser
+from rss_tool.tasks import rss_xml_parser
 from rss_tool.utils.validators import validate_url
 
 # from .models import RSS
@@ -41,7 +41,7 @@ class UrlParserView(View):
                 # show an empty form
                 self.data["form"] = self.form_class()
                 # run parsing
-                rss_xml_parser(url, request.user.id)
+                rss_xml_parser.delay(url, request.user.id)
                 return render(request, self.template_name, self.data)
             else:
                 self.data["errors"] = errors
