@@ -14,6 +14,6 @@ def validate_url(url: str):
         return
 
     if not url.startswith("http"):
-        url = f"http://{url}"
+        url = f"https://{url}"
 
     return url

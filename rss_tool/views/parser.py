@@ -5,7 +5,6 @@ from rss_tool.forms import RSSForm
 from rss_tool.tasks import rss_xml_parser
 from rss_tool.utils.validators import validate_url
 
-# from .models import RSS
 __all__ = [
     'UrlParserView'
 ]

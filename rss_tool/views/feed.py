@@ -23,7 +23,9 @@ class FeedsView(View):
             raise Http404("User not exist")
 
         # get feeds and check if feed is in favorites
-        bookmark = Bookmark.objects.filter(user_id=current_user_id, feed_id=OuterRef('pk'))
+        bookmark = Bookmark.objects.filter(
+            user_id=current_user_id, feed_id=OuterRef('pk')
+        )
         feeds = Feed.objects.prefetch_related(
             'comments__author'
         ).filter(

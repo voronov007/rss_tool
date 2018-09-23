@@ -5,9 +5,6 @@ from django.shortcuts import render
 from django.views import View
 
 
-# from .models import RSS
-
-
 class ExploreView(View):
     template_name = 'rss_tool/explore.html'
 
