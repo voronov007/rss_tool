@@ -11,7 +11,7 @@
 ## Deploy
  - settings for test, dev and production:
       - `ENVIRONMENT` var needs to be `PRODUCTION` for production settings
-      - if `ENVIRONMENT` var needs set to `TEST` then your database will be sqllite3
+      - if `ENVIRONMENT` var is set to `TEST` then your database is sqllite3
 
 ### Docker
  - use make file commands to deploy and run local server
