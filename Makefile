@@ -79,14 +79,10 @@ restart_db:
 test:
 	docker-compose exec sendcloud_web pytest -s /code/${path}
 
-## run(check) tests coverage
-coverage:
-	docker-compose run sendcloud_web pytest -s /code/ --cov=. --cov-report html --cov-config .coveragerc
-
 ## dump all data from the DB. Output - "db.json" file
 dump_all:
 	docker-compose exec sendcloud_web python /code/manage.py dumpdata --exclude auth.permission --exclude contenttypes --exclude admin --exclude sessions > fixtures/db.json
 
-## load data from the DB dump file. Args: <filename>
+## load data from the DB dump file
 load_data:
-	docker-compose exec sendcloud_web python /code/manage.py loaddata fixtures/${filename}
+	docker-compose exec sendcloud_web python /code/manage.py loaddata fixtures/db.json
