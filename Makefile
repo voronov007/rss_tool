@@ -4,6 +4,8 @@ YELLOW := $(shell tput -Txterm setaf 3)
 WHITE  := $(shell tput -Txterm setaf 7)
 RESET  := $(shell tput -Txterm sgr0)
 
+# virtualenv path
+VENV_PREFIX ?= ./venv/bin/
 
 TARGET_MAX_CHAR_NUM=20
 ## show help
@@ -53,6 +55,20 @@ migrate:
 ## open Django shell
 shell:
 	docker-compose exec sendcloud_web python /code/manage.py shell
+
+## format code by PEP-8 rules and best practices
+fmt:
+	$(VENV_PREFIX)isort -rc authentication
+	$(VENV_PREFIX)isort -rc rss_tool
+	$(VENV_PREFIX)isort -rc sendcloud
+	$(VENV_PREFIX)black -l 79 authentication
+	$(VENV_PREFIX)black -l 79 rss_tool
+	$(VENV_PREFIX)black -l 79 sendcloud
+
+## check if code is fit to PEP-8 and best practices
+lint:
+	$(VENV_PREFIX)flake8 authentication/ rss_tool/ sendcloud/
+	$(VENV_PREFIX)black -l 79 --check authentication rss_tool sendcloud
 
 ## open Django bash
 bash:

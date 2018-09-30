@@ -6,6 +6,4 @@ class UserLoginForm(forms.Form):
     password = forms.CharField(
         min_length=8, max_length=25, widget=forms.PasswordInput
     )
-    widgets = {
-        'password': forms.PasswordInput(),
-    }
+    widgets = {"password": forms.PasswordInput()}

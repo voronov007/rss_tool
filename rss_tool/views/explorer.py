@@ -6,19 +6,19 @@ from django.views import View
 
 
 class ExploreView(View):
-    template_name = 'rss_tool/explore.html'
+    template_name = "rss_tool/explore.html"
 
     def get(self, request, *args, **kwargs):
         # get users with at least 1 feed
-        users = User.objects.annotate(
-            feeds_count=Count('channels__feeds')
-        ).filter(
-            Q(feeds_count__gte=1), ~Q(id=request.user.pk)
-        ).order_by("id")
+        users = (
+            User.objects.annotate(feeds_count=Count("channels__feeds"))
+            .filter(Q(feeds_count__gte=1), ~Q(id=request.user.pk))
+            .order_by("id")
+        )
 
         # use pagination
         paginator = Paginator(users, 25)
-        page = request.GET.get('page')
+        page = request.GET.get("page")
         users_per_page = paginator.get_page(page)
 
         has_next = users_per_page.has_next()
@@ -31,14 +31,18 @@ class ExploreView(View):
                 "has_previous": has_previous,
                 "has_next": has_next,
                 "num_pages": users_per_page.paginator.num_pages,
-                "number": users_per_page.number
-            }
+                "number": users_per_page.number,
+            },
         }
         if has_previous:
-            explore_data["pagination"]["previous_page_number"] = users_per_page.previous_page_number()
+            explore_data["pagination"][
+                "previous_page_number"
+            ] = users_per_page.previous_page_number()
 
         if has_next:
-            explore_data["pagination"]["next_page_number"] = users_per_page.next_page_number()
+            explore_data["pagination"][
+                "next_page_number"
+            ] = users_per_page.next_page_number()
 
         for u in users_per_page:
             explore_data["users"].append(

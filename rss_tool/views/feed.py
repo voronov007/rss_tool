@@ -7,14 +7,14 @@ from django.shortcuts import render
 from django.views import View
 
 from rss_tool.forms import CommentForm
-from rss_tool.models import Feed, Bookmark, Comment
+from rss_tool.models import Bookmark, Comment, Feed
 
-__all__ = ['FeedsView']
+__all__ = ["FeedsView"]
 
 
 class FeedsView(View):
     form_class = CommentForm
-    template_name = 'rss_tool/feed.html'
+    template_name = "rss_tool/feed.html"
 
     def get(self, request, user_id):
         current_user_id = request.user.pk
@@ -24,19 +24,18 @@ class FeedsView(View):
 
         # get feeds and check if feed is in favorites
         bookmark = Bookmark.objects.filter(
-            user_id=current_user_id, feed_id=OuterRef('pk')
+            user_id=current_user_id, feed_id=OuterRef("pk")
         )
-        feeds = Feed.objects.prefetch_related(
-            'comments__author'
-        ).filter(
-            channel__user_id=user.pk
-        ).annotate(
-            is_favorite=Exists(bookmark)
-        ).order_by("-pub_date")
+        feeds = (
+            Feed.objects.prefetch_related("comments__author")
+            .filter(channel__user_id=user.pk)
+            .annotate(is_favorite=Exists(bookmark))
+            .order_by("-pub_date")
+        )
 
         # use pagination
         paginator = Paginator(feeds, 25)
-        page = request.GET.get('page')
+        page = request.GET.get("page")
         feeds_per_page = paginator.get_page(page)
 
         has_next = feeds_per_page.has_next()
@@ -54,8 +53,8 @@ class FeedsView(View):
                 "has_previous": has_previous,
                 "has_next": has_next,
                 "num_pages": feeds_per_page.paginator.num_pages,
-                "number": feeds_per_page.number
-            }
+                "number": feeds_per_page.number,
+            },
         }
 
         return render(request, self.template_name, template_data)
@@ -86,7 +85,9 @@ class FeedsView(View):
         )
         return JsonResponse(
             {
-                "feed_id": feed_id, "success": True, "comment": comment,
-                "email": current_user.email
+                "feed_id": feed_id,
+                "success": True,
+                "comment": comment,
+                "email": current_user.email,
             }
         )

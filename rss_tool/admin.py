@@ -1,5 +1,6 @@
 from django.contrib import admin
-from rss_tool.models import Channel, Feed, Comment
+
+from rss_tool.models import Channel, Comment, Feed
 
 
 @admin.register(Channel)
@@ -15,4 +16,3 @@ class FeedAdmin(admin.ModelAdmin):
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     pass
-

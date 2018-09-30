@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render
 from django.views import View
 
@@ -5,18 +6,13 @@ from rss_tool.forms import RSSForm
 from rss_tool.tasks import rss_xml_parser
 from rss_tool.utils.validators import validate_url
 
-__all__ = [
-    'UrlParserView'
-]
+__all__ = ["UrlParserView"]
 
 
 class UrlParserView(View):
-    template_name = 'rss_tool/parser.html'
+    template_name = "rss_tool/parser.html"
     form_class = RSSForm
-    data = {
-        'section': {'title': "RSS Tool"},
-        'h1': "RSS Parser"
-    }
+    data = {"section": {"title": "RSS Tool"}, "h1": "RSS Parser"}
 
     def get(self, request, *args, **kwargs):
         self.data["form"] = self.form_class()
@@ -36,7 +32,9 @@ class UrlParserView(View):
                 errors.append("Incorrect RSS url address. Please fix it")
 
             if not errors:
-                self.data["success"] = "RSS parsing started. Please, be patient"
+                messages.success(
+                    request, "RSS parsing started. Please, be patient"
+                )
                 # show an empty form
                 self.data["form"] = self.form_class()
                 # run parsing

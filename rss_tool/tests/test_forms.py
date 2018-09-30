@@ -1,4 +1,4 @@
-from rss_tool.forms import RSSForm, CommentForm
+from rss_tool.forms import CommentForm, RSSForm
 
 
 def test_rss_form_ok():

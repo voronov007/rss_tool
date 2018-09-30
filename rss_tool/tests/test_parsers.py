@@ -1,10 +1,8 @@
 import pytest
-
 from django.contrib.auth.models import User
 
-from rss_tool.tasks import rss_xml_parser
 from rss_tool.models.feed import Channel, Feed
-
+from rss_tool.tasks import rss_xml_parser
 
 pytestmark = pytest.mark.django_db
 
@@ -72,7 +70,7 @@ def patched_xml_response(url):
 
 def test_xml_parser_ok(mocker):
     mocker.patch(
-        'rss_tool.tasks.parsing.requests.get', side_effect=patched_xml_response
+        "rss_tool.tasks.parsing.requests.get", side_effect=patched_xml_response
     )
 
     email = "test@test.com"
