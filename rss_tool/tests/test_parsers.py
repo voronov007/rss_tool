@@ -1,12 +1,11 @@
 import pytest
 from django.contrib.auth.models import User
 
-from rss_tool.models.feed import Channel, Feed
+from rss_tool.models.feed import Channel
+from rss_tool.models.feed import Feed
 from rss_tool.tasks import rss_xml_parser
 
 pytestmark = pytest.mark.django_db
-
-temp = ""
 
 
 def patched_xml_response(url):

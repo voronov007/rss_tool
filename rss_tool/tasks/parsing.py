@@ -3,7 +3,8 @@ from xml.etree import ElementTree as etree
 import requests
 from django.utils.timezone import datetime as dt
 
-from rss_tool.models.feed import Channel, Feed
+from rss_tool.models.feed import Channel
+from rss_tool.models.feed import Feed
 from sendcloud.celery import app
 
 dt_patterns = {1: "%a, %d %b %Y %X %z", 2: "%a, %d %b %Y %X %Z"}

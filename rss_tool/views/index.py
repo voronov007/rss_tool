@@ -3,7 +3,8 @@ from django.http.response import JsonResponse
 from django.shortcuts import render
 from django.views import View
 
-from rss_tool.models import Comment, Feed
+from rss_tool.models import Comment
+from rss_tool.models import Feed
 
 __all__ = ["IndexView"]
 

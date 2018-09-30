@@ -1,5 +1,5 @@
-from rss_tool.views.explorer import *
-from rss_tool.views.favorites import *
-from rss_tool.views.feed import *
-from rss_tool.views.index import *
-from rss_tool.views.parser import *
+from rss_tool.views.explorer import *  # noqa
+from rss_tool.views.favorites import *  # noqa
+from rss_tool.views.feed import *  # noqa
+from rss_tool.views.index import *  # noqa
+from rss_tool.views.parser import *  # noqa

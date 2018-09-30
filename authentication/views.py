@@ -1,5 +1,6 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
+from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -7,7 +8,8 @@ from django.views import View
 
 from sendcloud.settings import LOGIN_REDIRECT_URL
 
-from .forms import UserLoginForm, UserRegisterForm
+from .forms import UserLoginForm
+from .forms import UserRegisterForm
 
 
 class UserLoginView(View):

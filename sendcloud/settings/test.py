@@ -1,6 +1,8 @@
 import os
 
-from .base import BASE_DIR, INSTALLED_APPS, MIDDLEWARE
+from .base import BASE_DIR
+from .base import INSTALLED_APPS
+from .base import MIDDLEWARE
 
 DATABASES = {
     "default": {

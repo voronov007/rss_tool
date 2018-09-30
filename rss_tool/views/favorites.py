@@ -4,7 +4,9 @@ from django.shortcuts import render
 from django.views import View
 
 from rss_tool.forms import CommentForm
-from rss_tool.models import Bookmark, Comment, Feed
+from rss_tool.models import Bookmark
+from rss_tool.models import Comment
+from rss_tool.models import Feed
 
 __all__ = ["FavoritesView"]
 

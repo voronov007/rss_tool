@@ -1,6 +1,8 @@
 from django.contrib import admin
 
-from rss_tool.models import Channel, Comment, Feed
+from rss_tool.models import Channel
+from rss_tool.models import Comment
+from rss_tool.models import Feed
 
 
 @admin.register(Channel)
